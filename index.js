@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const validatePassword = (password) => {
   // if not long enough, return false
   if (password.length < 8) return false
@@ -64,6 +65,18 @@ const hasSpecialChar = (password) => {
   }
 
   return false
+}
+
+// For the HTML site // 
+// eslint-disable-next-line no-unused-vars
+const webValidate = () => {
+  let password = document.getElementById('input-box').value
+
+  if (validatePassword(password)) {
+    document.getElementById('result').innerHTML = 'Good job!'
+  } else {
+    document.getElementById('result').innerHTML = 'Try Again'
+  }
 }
 
 module.exports = validatePassword
